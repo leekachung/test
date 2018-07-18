@@ -7,6 +7,8 @@
  * @param $filename [文件名] 
  * @param $filedir [文件的相对路径]
  * 
+ * @author leekachung <[leekachung17@gmail.com]>
+ * 
  */
 class Download{
 
@@ -23,7 +25,7 @@ class Download{
 	public function Down($filename, $filedir){
 
 		//PHP低版本需添加转码 防止中文乱码
-		//本机生产环境为PHP7.2.1  中文不会乱码 所以不使用转码 
+		//本机生产环境配置好编码格式  中文不会乱码 所以不使用转码 
 		//$filename = iconv("utf-8", "gb2312", $filename);
 
 		$filePath = $_SERVER['DOCUMENT_ROOT'] . $filedir . $filename; //拼接文件的绝对路径
@@ -63,5 +65,5 @@ class Download{
 }
 
 $d = new Download;
-$d->Down('顺平.wmv', '/');
+$d->Down('下载的文件名', '下载文件的相对路径');
 
